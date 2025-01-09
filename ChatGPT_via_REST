@@ -1,0 +1,19 @@
+var ChatGPT_via_REST = Class.create();
+ChatGPT_via_REST.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    processPrompt: function() {
+        var userPrompt = this.getParameter('sysparm_user_prompt');
+        
+        // Perform your REST API call here using the RESTMessageV2 API
+        var restMessage = new sn_ws.RESTMessageV2('Openai_REST_Message', 'Default POST');
+        restMessage.setStringParameterNoEscape('user_content', userPrompt);
+        
+        try {
+            var response = restMessage.execute();
+            var responseBody = response.getBody();
+            
+            return responseBody; // Return the response back to client script
+        } catch (ex) {
+            return ex.getMessage();
+        }
+    }
+});
