@@ -24,6 +24,8 @@ This repository demonstrates the integration of ServiceNow with OpenAI's GPT-4 m
 - Create a new UI Page in ServiceNow.
 - Paste the content of `html.html` into the HTML field of the UI Page.
 
+![UI Page Setup](screenshots/ui_page.png)
+
 #### 2. Client Script Setup
 
 - Add a Dynamic HTML script that loads `client_script.js`.
@@ -35,13 +37,15 @@ This repository demonstrates the integration of ServiceNow with OpenAI's GPT-4 m
 - Set the Name to `ChatGPT_via_REST` and ensure it is set to "Client Callable" if necessary.
 - Paste the content of `script_includes.js` into the Script field.
 
+![Script Include Setup](screenshots/script_include.png)
+
 #### 4. REST Integration Setup
 
 - Create a new REST Message in ServiceNow:
   - Set Name to `Openai_REST_Message`.
   - Under the HTTP methods, create a method named `Default POST`.
   - Paste the endpoint URL: `https://api.openai.com/v1/chat/completions`.
-  - Configure the REST message as shown in the screenshots.
+  - Configure the REST message as shown in the screenshots below.
 
 ##### REST Configuration Screenshots
 
@@ -62,11 +66,13 @@ Ensure that the REST configuration matches the following:
 
 For visual guidance, refer to the screenshots located in the `/screenshots/` directory:
 
-1. `rest1.png` - Basic REST configuration.
-2. `rest2.png` - REST method details.
-3. `rest3.png` - Completed REST message setup.
+1. `ui_page.png` - UI Page setup for the chat interface.
+2. `script_include.png` - Script Include setup for processing conversations.
+3. `rest1.png` - Basic REST configuration.
+4. `rest2.png` - REST method details.
+5. `rest3.png` - Completed REST message setup.
 
-These images demonstrate the configuration of the REST API connection within ServiceNow, crucial for the integration.
+These images demonstrate the configuration of various components necessary for the integration within ServiceNow and OpenAI.
 
 ## Conclusion
 
